@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "date": "2026-01-31T06:15:34.972094",
+    "model": "claude-sonnet-4-20250514",
+    "total_scenarios": 7,
+    "total_turns": 49,
+    "phases_tested": [
+      "1.5",
+      "3.0"
+    ]
+  },
+  "phase_1_5": {
+    "description": "Operator-based NRR - External state, operator abstraction",
+    "scenarios": {
+      "bank": {
+        "turns": 5,
+        "total_tokens": 436,
+        "avg_per_turn": 87.2,
+        "expression_type": "explicit"
+      },
+      "spring_explicit": {
+        "turns": 10,
+        "total_tokens": 1513,
+        "avg_per_turn": 151.3,
+        "expression_type": "explicit"
+      },
+      "court_explicit": {
+        "turns": 12,
+        "total_tokens": 1794,
+        "avg_per_turn": 149.5,
+        "expression_type": "explicit"
+      }
+    },
+    "key_finding": "Universal stability across all scenarios and expression types"
+  },
+  "phase_3_0": {
+    "description": "Hybrid Router - Keyword matching with LLM fallback",
+    "scenarios": {
+      "bank_explicit": {
+        "turns": 5,
+        "total_tokens": 56,
+        "avg_per_turn": 11.2,
+        "llm_calls": 1,
+        "auto_calls": 4,
+        "llm_rate": "20%",
+        "expression_type": "explicit"
+      },
+      "spring_explicit": {
+        "turns": 10,
+        "total_tokens": 0,
+        "avg_per_turn": 0.0,
+        "llm_calls": 0,
+        "auto_calls": 10,
+        "llm_rate": "0%",
+        "expression_type": "explicit"
+      },
+      "court_explicit": {
+        "turns": 12,
+        "total_tokens": 0,
+        "avg_per_turn": 0.0,
+        "llm_calls": 0,
+        "auto_calls": 12,
+        "llm_rate": "0%",
+        "expression_type": "explicit"
+      },
+      "spring_ambiguous": {
+        "turns": 5,
+        "total_tokens": 733,
+        "avg_per_turn": 146.6,
+        "llm_calls": 5,
+        "auto_calls": 0,
+        "llm_rate": "100%",
+        "expression_type": "ambiguous"
+      },
+      "court_ambiguous": {
+        "turns": 5,
+        "total_tokens": 733,
+        "avg_per_turn": 146.6,
+        "llm_calls": 5,
+        "auto_calls": 0,
+        "llm_rate": "100%",
+        "expression_type": "ambiguous"
+      }
+    },
+    "key_finding": "Perfect performance with explicit expressions, complete fallback with ambiguous expressions"
+  },
+  "critical_insights": {
+    "phase_1_5_stability": "Works consistently across all expression types",
+    "phase_3_0_fragility": "100% LLM fallback rate with ambiguous expressions",
+    "ambiguity_penalty": "When keywords fail, Phase 3.0 cost ≈ Phase 1.5 cost (~147 tokens/turn)",
+    "practical_recommendation": "Phase 1.5 for general purpose, Phase 3.0 only for well-defined narrow domains"
+  },
+  "comparison": {
+    "phase_1_5_avg": 129.3,
+    "phase_3_0_explicit_best": 0.0,
+    "phase_3_0_ambiguous_avg": 146.6
+  }
+}
