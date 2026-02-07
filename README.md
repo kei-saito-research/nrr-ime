@@ -135,11 +135,9 @@ If you use this code, please cite:
 
 ## Related Repositories
 
-- [NRR-Core](https://github.com/kei-saito-research/nrr-framework) - Foundational framework (Paper 1)
-- [NRR-Phi](https://github.com/kei-saito-research/nrr-phi-mapping) - Text-to-state mapping (Paper 2)
-- [NRR-Operators](https://github.com/kei-saito-research/nrr-operators) - Operator design principles (Paper 3)
-- [NRR-Phase1.5](https://github.com/kei-saito-research/nrr-phase1.5) - Universal generality validation (Paper 5)
-- [NRR-Hout](https://github.com/kei-saito-research/nrr-hout) - Output-side entropy measurement (Paper H)
+- [NRR-Core](https://github.com/kei-saito-research/nrr-framework) - Foundational framework
+- [NRR-Phi](https://github.com/kei-saito-research/nrr-phi-mapping) - Text-to-state mapping
+- [NRR-Universal](https://github.com/kei-saito-research/nrr-universal) - Universal generality validation
 
 ---
 
