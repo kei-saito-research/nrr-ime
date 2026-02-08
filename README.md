@@ -141,10 +141,17 @@ If you use this code, please cite:
 
 ---
 
+## Commercial Use
+
+This work is released openly under a CC BY 4.0 license.
+
+If you plan to use it in a commercial or production setting,
+a short message would be appreciated.
+It helps me understand real-world use and continue the research.
+
 ## License
 
-This code is licensed under CC BY 4.0.  
-© 2026 Kei Saito
+CC BY 4.0 License. See [LICENSE](LICENSE).
 
 ---
 
