@@ -135,8 +135,8 @@ If you use this code, please cite:
 
 ## Related Repositories
 
-- [NRR-Core](https://github.com/kei-saito-research/nrr-framework) - Foundational framework
-- [NRR-Phi](https://github.com/kei-saito-research/nrr-phi-mapping) - Text-to-state mapping
+- [NRR-Core](https://github.com/kei-saito-research/nrr-core) - Foundational framework
+- [NRR-Phi](https://github.com/kei-saito-research/nrr-phi) - Text-to-state mapping
 - [NRR-Universal](https://github.com/kei-saito-research/nrr-universal) - Universal generality validation
 
 ---
