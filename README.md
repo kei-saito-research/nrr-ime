@@ -152,6 +152,19 @@ CC BY 4.0 License. See [LICENSE](LICENSE).
 
 ---
 
+## Reproduction & Issue Reports
+
+If you reproduce results, find discrepancies, or hit bugs, please open an issue:
+- https://github.com/kei-saito-research/nrr-ime/issues
+
+Please include:
+- environment (OS, Python version)
+- command you ran
+- commit hash (if applicable)
+- observed output/error logs
+
+---
+
 ## Contact
 
 Kei Saito  
