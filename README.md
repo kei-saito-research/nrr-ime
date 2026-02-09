@@ -17,7 +17,7 @@ This repository contains the experimental validation code for NRR-IME (Interpret
 - **135 experimental runs** (45 configurations x 3 trials) across Claude Sonnet 4, GPT-4o-mini, and Gemini 2.0 Flash
 - **Phase 1.5 reliability**: 100% operator extraction across all 9 model-scenario combinations (27 runs)
 - **Structural stability** at temperature 0.3: max observed std = 0.5 tokens (all other configurations std = 0)
-- **Cross-scenario stability**: 89.8-110.8 tokens/turn across Bank/Spring/Court (all models, std <= 0.5)
+- **Cross-scenario stability**: 89.8-110.8 tokens/turn across Bank/Spring/Court (all models, std ≤ 0.5)
 
 ---
 
@@ -87,25 +87,25 @@ All experimental results are stored in `experiments/experimental_data.json`:
 - **Structural stability**: max observed std = 0.5 tokens (all others std = 0)
 - **Phase 1.5 per-turn band**: 89.8-110.8 tokens/turn across all model-scenario combinations
 
-### Phase 1.5 Totals by Model (mean +- std, 3 trials)
+### Phase 1.5 Totals by Model (mean ± std, 3 trials)
 
 | Model | Bank (5t) | Spring (10t) | Court (12t) | Extract |
 |-------|-----------|--------------|-------------|---------|
-| Claude | 513 +- 0 | 1108 +- 0 | 1316 +- 0 | 100% |
-| GPT | 449 +- 0 | 987 +- 0 | 1181 +- 0 | 100% |
-| Gemini | 458 +- 0 | 978 +- 0 | 1179.3 +- 0.5 | 100% |
+| Claude | 513 ± 0 | 1108 ± 0 | 1316 ± 0 | 100% |
+| GPT | 449 ± 0 | 987 ± 0 | 1181 ± 0 | 100% |
+| Gemini | 458 ± 0 | 978 ± 0 | 1179.3 ± 0.5 | 100% |
 
 ### Comparative Summary (Bank scenario, Claude, mean across 3 trials)
 
 | Phase | Tokens | Std | Extract | NRR OK? | Failure mode |
 |------|--------|-----|---------|---------|--------------|
-| 1.0 | 734 | +-29 | --- | Partial | Output variance |
-| 1.3 | 448 | +-0 | 100% | No | Bang-bang oscillation |
-| 1.5 | 513 | <=0.5 | 100% | Yes | None |
-| 1.6 | 707 | +-54 | 0% | No | Extraction failure |
-| 2.0 | 429 | +-0 | --- | No | Semantic collapse |
-| 3.0e | 102 | +-0 | 80%* | Conditional | Input dependency |
-| 3.0a | 525 | +-0 | 0%* | Yes | Reverts to 1.5 |
+| 1.0 | 734 | ±29 | --- | Partial | Output variance |
+| 1.3 | 448 | ±0 | 100% | No | Bang-bang oscillation |
+| 1.5 | 513 | ≤0.5 | 100% | Yes | None |
+| 1.6 | 707 | ±54 | 0% | No | Extraction failure |
+| 2.0 | 429 | ±0 | --- | No | Semantic collapse |
+| 3.0e | 102 | ±0 | 80%* | Conditional | Input dependency |
+| 3.0a | 525 | ±0 | 0%* | Yes | Reverts to 1.5 |
 
 *For Phase 3.0, extraction indicates automation rate, not operator extraction.
 
