@@ -14,9 +14,10 @@ Part of the Non-Resolution Reasoning (NRR) research program.
 
 This repository contains the experimental validation code for NRR-IME (Interpretation Management Engine), demonstrating:
 
-- **66.2% token reduction** through structure-aware optimization (Phase 1.5)
-- **93.3% reduction** with zero-LLM explicit input (Phase 3.0)
-- **Consistent efficiency** across diverse IME scenarios (Bank, Spring, Court)
+- **135 experimental runs** (45 configurations x 3 trials) across Claude Sonnet 4, GPT-4o-mini, and Gemini 2.0 Flash
+- **Phase 1.5 reliability**: 100% operator extraction across all 9 model-scenario combinations (27 runs)
+- **Structural stability** at temperature 0.3: max observed std = 0.5 tokens (all other configurations std = 0)
+- **Cross-scenario stability**: 89.8-110.8 tokens/turn across Bank/Spring/Court (all models, std <= 0.5)
 
 ---
 
@@ -52,25 +53,9 @@ pip install -r requirements.txt
 python experiments/phase_comparison.py
 ```
 
-Output:
-```
-Phase 1.0 (Naive):              1207 tokens (5 turns)
-Phase 1.5 (Operators):           408 tokens (5 turns) [-66.2%]
-Phase 3.0 (Zero-LLM Explicit):    81 tokens (5 turns) [-93.3%]
-```
-
 **Scaling Validation (3 scenarios):**
 ```bash
 python experiments/scaling_validation.py
-```
-
-Output:
-```
-Bank    (5 turns):   408 tokens (81.6 avg/turn)
-Spring (10 turns):   874 tokens (87.4 avg/turn)
-Court  (12 turns):  1020 tokens (85.0 avg/turn)
-
-Phase 1.5 maintains consistent efficiency: 81.6-87.4 tokens/turn
 ```
 
 ### Generate Figures
@@ -88,32 +73,41 @@ Figures will be saved in the `figures/` directory.
 
 All experimental results are stored in `experiments/experimental_data.json`:
 
-- Phase 1.0, 1.5, 3.0 comparisons
-- Bank, Spring, Court scenarios
-- Turn-by-turn token consumption
-- Operator extraction statistics
+- 135 runs (45 configurations x 3 trials)
+- Three scenarios (Bank, Spring, Court) across three models
+- Turn-by-turn token consumption and variance
+- Operator extraction statistics and phase-wise failure modes
 
 ---
 
-## Key Results
+## Key Results (Paper-Aligned)
 
-### Token Efficiency
+- **Protocol**: 135 runs (45 configurations x 3 trials), 3 models, temperature 0.3
+- **Phase 1.5 extraction**: 100% across all 9 model-scenario combinations (27 runs)
+- **Structural stability**: max observed std = 0.5 tokens (all others std = 0)
+- **Phase 1.5 per-turn band**: 89.8-110.8 tokens/turn across all model-scenario combinations
 
-| Phase | Tokens (5 turns) | Reduction |
-|-------|-----------------|-----------|
-| 1.0 (Naive) | 1207 | baseline |
-| 1.5 (Operators) | 408 | **-66.2%** |
-| 3.0 (Zero-LLM) | 81 | **-93.3%** |
+### Phase 1.5 Totals by Model (mean +- std, 3 trials)
 
-### Cross-Scenario Consistency
+| Model | Bank (5t) | Spring (10t) | Court (12t) | Extract |
+|-------|-----------|--------------|-------------|---------|
+| Claude | 513 +- 0 | 1108 +- 0 | 1316 +- 0 | 100% |
+| GPT | 449 +- 0 | 987 +- 0 | 1181 +- 0 | 100% |
+| Gemini | 458 +- 0 | 978 +- 0 | 1179.3 +- 0.5 | 100% |
 
-| Scenario | Turns | Total Tokens | Avg/Turn |
-|----------|-------|--------------|----------|
-| Bank | 5 | 408 | 81.6 |
-| Spring | 10 | 874 | 87.4 |
-| Court | 12 | 1020 | 85.0 |
+### Comparative Summary (Bank scenario, Claude, mean across 3 trials)
 
-Phase 1.5 maintains 81.6-87.4 tokens/turn across all scenarios.
+| Phase | Tokens | Std | Extract | NRR OK? | Failure mode |
+|------|--------|-----|---------|---------|--------------|
+| 1.0 | 734 | +-29 | --- | Partial | Output variance |
+| 1.3 | 448 | +-0 | 100% | No | Bang-bang oscillation |
+| 1.5 | 513 | <=0.5 | 100% | Yes | None |
+| 1.6 | 707 | +-54 | 0% | No | Extraction failure |
+| 2.0 | 429 | +-0 | --- | No | Semantic collapse |
+| 3.0e | 102 | +-0 | 80%* | Conditional | Input dependency |
+| 3.0a | 525 | +-0 | 0%* | Yes | Reverts to 1.5 |
+
+*For Phase 3.0, extraction indicates automation rate, not operator extraction.
 
 ---
 
