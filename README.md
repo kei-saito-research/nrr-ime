@@ -132,7 +132,13 @@ If you use this code, please cite:
 
 - [NRR-Core](https://github.com/kei-saito-research/nrr-core) - Foundational framework
 - [NRR-Phi](https://github.com/kei-saito-research/nrr-phi) - Text-to-state mapping
-- [NRR-Universal](https://github.com/kei-saito-research/nrr-universal) - Universal generality validation
+- [NRR-Transfer](https://github.com/kei-saito-research/nrr-transfer) - Cross-domain transfer validation
+
+---
+
+## Reproducibility
+
+See [`reproducibility.md`](./reproducibility.md) for environment, fixed settings, runnable commands, and artifact mapping.
 
 ---
 
