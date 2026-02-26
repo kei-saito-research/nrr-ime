@@ -8,6 +8,7 @@ Kei Saito (2026)
 
 Part of the Non-Resolution Reasoning (NRR) research program.
 Program Map (series hub): [NRR Program Map](https://github.com/kei-saito-research/nrr-core/blob/main/PROGRAM_MAP.md)
+Version mapping source of truth: [`VERSION_MAP.md`](./VERSION_MAP.md)
 
 ---
 
@@ -33,19 +34,24 @@ nrr-ime/
 │   ├── scaling_validation.py    # Cross-scenario validation
 │   └── experimental_data.json   # Complete experimental results
 ├── figures/
-    ├── figure1_phase_comparison.png
-    ├── figure2_scaling_validation.png
-    ├── generate_fig1.py         # Phase comparison chart
-    └── generate_fig2.py         # Scaling validation chart
+│   ├── figure1_phase_comparison.png
+│   ├── figure2_scaling_validation.png
+│   ├── generate_fig1.py         # Phase comparison chart
+│   └── generate_fig2.py         # Scaling validation chart
 ├── manuscript/
-│   └── v61/
-│       ├── paper4-nrr-ime-v61.tex
-│       ├── fig1_design_space.png
-│       ├── fig2_bangbang.png
-│       ├── fig3_comparative.png
-│       ├── fig4_stability.png
-│       └── checksums_sha256.txt
-└── reproducibility.md
+│   ├── current/
+│   │   ├── paper4-nrr-ime-v55.tex
+│   │   ├── fig1_design_space.png
+│   │   ├── fig2_bangbang.png
+│   │   ├── fig3_comparative.png
+│   │   ├── fig4_stability.png
+│   │   └── checksums_sha256.txt
+│   └── archive/
+│       └── local-v61/
+├── scripts/
+│   └── verify_versions.sh
+├── reproducibility.md
+└── VERSION_MAP.md
 ```
 
 ---
@@ -94,16 +100,22 @@ All experimental results are stored in `experiments/experimental_data.json`:
 
 ## Manuscript Artifacts (Moderation Snapshot)
 
-This repository includes a frozen manuscript snapshot for the moderation track:
+This repository includes a fixed current moderation snapshot and archived later local drafts.
+Mapping is maintained in [`VERSION_MAP.md`](./VERSION_MAP.md).
 
-- `manuscript/v61/paper4-nrr-ime-v61.tex`
-- `manuscript/v61/fig1_design_space.png`
-- `manuscript/v61/fig2_bangbang.png`
-- `manuscript/v61/fig3_comparative.png`
-- `manuscript/v61/fig4_stability.png`
-- `manuscript/v61/checksums_sha256.txt`
+- Current (under moderation): `manuscript/current/paper4-nrr-ime-v55.tex`
+- Current figures: `manuscript/current/fig1_design_space.png` ... `manuscript/current/fig4_stability.png`
+- Archived local draft: `manuscript/archive/local-v61/paper4-nrr-ime-v61.tex`
 
 These files are included for traceability; manuscript content changes must go to a new version directory.
+
+## Version Verification
+
+Run the consistency check before release updates:
+
+```bash
+./scripts/verify_versions.sh
+```
 
 ---
 

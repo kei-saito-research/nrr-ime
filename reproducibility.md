@@ -26,8 +26,9 @@ python3 figures/generate_fig2.py
 | Phase comparison figure (repo figure set) | `python3 figures/generate_fig1.py` | `figures/figure1_phase_comparison.png` |
 | Scaling validation figure (repo figure set) | `python3 figures/generate_fig2.py` | `figures/figure2_scaling_validation.png` |
 | Phase comparison summary table values | `python3 experiments/phase_comparison.py` | `stdout` (use terminal log) |
-| Moderation manuscript source snapshot | N/A (tracked artifact) | `manuscript/v61/paper4-nrr-ime-v61.tex` |
-| Moderation manuscript figure snapshot | N/A (tracked artifact) | `manuscript/v61/fig1_design_space.png` ... `manuscript/v61/fig4_stability.png` |
+| Moderation manuscript source snapshot (current) | N/A (tracked artifact) | `manuscript/current/paper4-nrr-ime-v55.tex` |
+| Moderation manuscript figure snapshot (current) | N/A (tracked artifact) | `manuscript/current/fig1_design_space.png` ... `manuscript/current/fig4_stability.png` |
+| Version map | N/A (tracked artifact) | `VERSION_MAP.md` |
 
 ## Known limitations
 - Experimental scripts replay fixed JSON logs; they do not re-query external APIs.
