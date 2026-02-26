@@ -4,7 +4,7 @@ Reference implementation for the paper:
 
 **"NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs"**  
 Kei Saito (2026)  
-*Manuscript in preparation* (arXiv submission pending)
+*Manuscript under moderation* (as of 2026-02-26; arXiv submission pending)
 
 Part of the Non-Resolution Reasoning (NRR) research program.
 Program Map (series hub): [NRR Program Map](https://github.com/kei-saito-research/nrr-core/blob/main/PROGRAM_MAP.md)
@@ -32,9 +32,20 @@ nrr-ime/
 │   ├── phase_comparison.py      # Phase 1.0 vs 1.5 vs 3.0 comparison
 │   ├── scaling_validation.py    # Cross-scenario validation
 │   └── experimental_data.json   # Complete experimental results
-└── figures/
+├── figures/
+    ├── figure1_phase_comparison.png
+    ├── figure2_scaling_validation.png
     ├── generate_fig1.py         # Phase comparison chart
     └── generate_fig2.py         # Scaling validation chart
+├── manuscript/
+│   └── v61/
+│       ├── paper4-nrr-ime-v61.tex
+│       ├── fig1_design_space.png
+│       ├── fig2_bangbang.png
+│       ├── fig3_comparative.png
+│       ├── fig4_stability.png
+│       └── checksums_sha256.txt
+└── reproducibility.md
 ```
 
 ---
@@ -78,6 +89,21 @@ All experimental results are stored in `experiments/experimental_data.json`:
 - Three scenarios (Bank, Spring, Court) across three models
 - Turn-by-turn token consumption and variance
 - Operator extraction statistics and phase-wise failure modes
+
+---
+
+## Manuscript Artifacts (Moderation Snapshot)
+
+This repository includes a frozen manuscript snapshot for the moderation track:
+
+- `manuscript/v61/paper4-nrr-ime-v61.tex`
+- `manuscript/v61/fig1_design_space.png`
+- `manuscript/v61/fig2_bangbang.png`
+- `manuscript/v61/fig3_comparative.png`
+- `manuscript/v61/fig4_stability.png`
+- `manuscript/v61/checksums_sha256.txt`
+
+These files are included for traceability; manuscript content changes must go to a new version directory.
 
 ---
 
