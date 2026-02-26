@@ -1,1 +1,8 @@
 .DS_Store
+__pycache__/
+*.pyc
+experiments/experimental_data.json
+figures/*.png
+figures/generate_fig1.py
+figures/generate_fig2.py
+manuscript/

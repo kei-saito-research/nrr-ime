@@ -1,35 +1,32 @@
-# Reproducibility
+# Reproducibility (NRR-IME pre-submission snapshot)
+
+## Scope
+
+This repository snapshot provides core experiment scripts only.
+Manuscript text files and full result artifacts are intentionally excluded while IME is under moderation.
 
 ## Environment
-- Python: 3.13.7 (`python3`)
-- Main libraries: NumPy >= 1.21.0, Matplotlib >= 3.5.0
-- OS: Darwin 25.2.0 arm64
+- Python: 3.10+
+- Libraries: `requirements.txt`
+  - numpy
+  - matplotlib
 
-## Fixed settings
-- model: Claude Sonnet 4, GPT-4o-mini, Gemini 2.0 Flash (paper protocol)
-- seed: N/A (dataset replay from fixed experimental logs)
-- temperature: main = 0.3 (Phase 1.5); comparative settings included in dataset
-- trials: 3 trials per configuration in the published dataset
+## Fixed protocol summary
+- Models in the IME study: Claude Sonnet 4, GPT-4o-mini, Gemini 2.0 Flash
+- Main temperature setting in manuscript protocol: 0.3
+- Trial design in manuscript protocol: 3 trials per configuration
 
 ## Run commands
 ```bash
 pip install -r requirements.txt
 python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
-python3 figures/generate_fig1.py
-python3 figures/generate_fig2.py
 ```
 
-## Artifact map
-| Table/Figure | Command | Output file |
-|---|---|---|
-| Phase comparison figure (repo figure set) | `python3 figures/generate_fig1.py` | `figures/figure1_phase_comparison.png` |
-| Scaling validation figure (repo figure set) | `python3 figures/generate_fig2.py` | `figures/figure2_scaling_validation.png` |
-| Phase comparison summary table values | `python3 experiments/phase_comparison.py` | `stdout` (use terminal log) |
-| Moderation manuscript source snapshot (current) | N/A (tracked artifact) | `manuscript/current/paper4-nrr-ime-v55.tex` |
-| Moderation manuscript figure snapshot (current) | N/A (tracked artifact) | `manuscript/current/fig1_design_space.png` ... `manuscript/current/fig4_stability.png` |
-| Version map | N/A (tracked artifact) | `VERSION_MAP.md` |
+## Output policy
+- Generated outputs from local execution are private pre-submission artifacts.
+- Public release of full outputs is deferred until IME moderation/publication is resolved.
 
 ## Known limitations
-- Experimental scripts replay fixed JSON logs; they do not re-query external APIs.
-- Provider tokenizer/version drift is not re-measured by this offline package.
+- Scripts in this snapshot do not include bundled full result logs.
+- Provider-side model updates may affect rerun values.
