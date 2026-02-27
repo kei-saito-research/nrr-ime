@@ -1,6 +1,15 @@
 # NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs
 
-Reference implementation package for the NRR-IME study (pre-public moderation phase).
+NRR-IME provides a pre-public implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes) during moderation, without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
+
+**Quick links**
+- arXiv: pending (under moderation; no public URL yet)
+- [Positioning (NRR vs related approaches)](./docs/positioning.md)
+- [Search Keywords and Weekly Rank Log](./docs/keywords.md)
+
+**EN/JA query terms**
+- `early commitment` = `早期確定`
+- `ambiguity-preserving inference` = `曖昧性保持推論`
 
 Part of the Non-Resolution Reasoning (NRR) research program.
 Program Map (series hub): https://github.com/kei-saito-research/nrr-core/blob/main/PROGRAM_MAP.md
