@@ -60,6 +60,19 @@ See `reproducibility.md` for fixed settings and pre-submission output policy.
 - https://github.com/kei-saito-research/nrr-phi
 - https://github.com/kei-saito-research/nrr-transfer
 
+## Collaboration Style
+
+I support written technical Q&A, concept clarification, and small evaluation design.
+
+Typical flow:
+1. you send questions and context,
+2. I return a structured technical response,
+3. if needed, I provide an English-ready version for external sharing.
+
+Scope: research interpretation and evaluation planning.  
+Out of scope: production integration, implementation outsourcing, ongoing operations, and delivery guarantees.  
+Contact: kei.saito.research@gmail.com
+
 ## License
 
 CC BY 4.0. See `LICENSE`.
