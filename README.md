@@ -12,7 +12,11 @@ NRR-IME provides a pre-public implementation package for **ambiguity-preserving 
 - `ambiguity-preserving inference` = `曖昧性保持推論`
 
 Part of the Non-Resolution Reasoning (NRR) research program.
-Program Map (series hub): https://github.com/kei-saito-research/nrr-core/blob/main/PROGRAM_MAP.md
+
+## NRR Series Hub (Start here)
+
+For the cross-paper map and current series links, start here:
+- [NRR Program Map](https://github.com/kei-saito-research/nrr-core/blob/main/PROGRAM_MAP.md)
 
 NRR is not an anti-LLM framework.
 NRR does not replace standard LLM use.
