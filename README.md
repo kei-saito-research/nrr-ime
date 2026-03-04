@@ -1,9 +1,9 @@
 # NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs
 
-NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes) during moderation, without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
+NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes), without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
 
 **Quick links**
-- arXiv: pending (under moderation; no public URL yet)
+- arXiv: not accepted (decision received 2026-03-05 JST; no public URL)
 - [Positioning (NRR vs related approaches)](./docs/positioning.md)
 - [Search Keywords and Weekly Rank Log](./docs/keywords.md)
 
@@ -21,6 +21,7 @@ For the cross-paper map and current series links, start here:
 NRR is not an anti-LLM framework.
 NRR does not replace standard LLM use.
 NRR optimizes when to commit and when to defer, under explicit conditions.
+Series numbering policy: `paper3` is permanently skipped and never reused.
 
 ## DOI
 
@@ -28,7 +29,7 @@ NRR optimizes when to commit and when to defer, under explicit conditions.
 
 ## Publication handling
 
-- This repository currently provides a minimal reproducibility surface while IME moderation is pending.
+- This repository currently provides a minimal reproducibility surface after the 2026-03-05 arXiv decision (not accepted).
 - Manuscript text artifacts (`.tex`, `.pdf`) are not included.
 - Full run outputs and generated figure PNGs are not included before public release.
 
