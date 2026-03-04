@@ -1,6 +1,6 @@
 # NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs
 
-NRR-IME provides a pre-public implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes) during moderation, without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
+NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes) during moderation, without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
 
 **Quick links**
 - arXiv: pending (under moderation; no public URL yet)
@@ -28,7 +28,7 @@ NRR optimizes when to commit and when to defer, under explicit conditions.
 
 ## Publication handling
 
-- This repository is maintained in pre-public mode while IME is under moderation.
+- This repository currently provides a minimal reproducibility surface while IME moderation is pending.
 - Manuscript text artifacts (`.tex`, `.pdf`) are not included.
 - Full run outputs and generated figure PNGs are not included before public release.
 
@@ -56,7 +56,7 @@ python3 experiments/scaling_validation.py
 
 ## Reproducibility
 
-See `reproducibility.md` for fixed settings and pre-submission output policy.
+See `reproducibility.md` for fixed settings and output-availability policy.
 
 ## Related Repositories
 

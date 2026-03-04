@@ -1,4 +1,4 @@
-# Reproducibility (NRR-IME pre-submission snapshot)
+# Reproducibility (NRR-IME snapshot)
 
 ## Scope
 
@@ -24,7 +24,7 @@ python3 experiments/scaling_validation.py
 ```
 
 ## Output policy
-- Generated outputs from local execution are private pre-submission artifacts.
+- Generated outputs from local execution are not bundled in this repository snapshot.
 - Public release of full outputs is deferred until IME moderation/publication is resolved.
 
 ## Known limitations
