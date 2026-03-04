@@ -1,9 +1,9 @@
 # NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs
 
-NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository intentionally ships a minimal reproducibility surface (scripts and protocol notes), without manuscript text or full result artifacts. It is intended for operational benchmarking of structure-aware updates, not for over-claiming universal superiority. The emphasis is auditability and safe scope: explicit assumptions, fixed protocol hooks, and visible limits before public manuscript release.
+NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository includes the current manuscript snapshot and reproducibility assets for operational benchmarking of structure-aware updates, with explicit protocol constraints and condition-bounded claims.
 
 **Quick links**
-- arXiv: not accepted (decision received 2026-03-05 JST; no public URL)
+- Manuscript snapshot: `manuscript/current/paper4-nrr-ime-v64.tex` / `paper4-nrr-ime-v64.pdf`
 - [Positioning (NRR vs related approaches)](./docs/positioning.md)
 - [Search Keywords and Weekly Rank Log](./docs/keywords.md)
 
@@ -27,11 +27,18 @@ Series numbering policy: `paper3` is permanently skipped and never reused.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18793316.svg)](https://doi.org/10.5281/zenodo.18793316)
 
-## Publication handling
+## Manuscript Artifacts
 
-- This repository currently provides a minimal reproducibility surface after the 2026-03-05 arXiv decision (not accepted).
-- Manuscript text artifacts (`.tex`, `.pdf`) are not included.
-- Full run outputs and generated figure PNGs are not included before public release.
+Current manuscript snapshot:
+- `manuscript/current/paper4-nrr-ime-v64.tex`
+- `manuscript/current/paper4-nrr-ime-v64.pdf`
+- `manuscript/current/fig1_design_space.png`
+- `manuscript/current/fig2_bangbang.png`
+- `manuscript/current/fig3_comparative.png`
+- `manuscript/current/fig4_stability.png`
+- `manuscript/current/checksums_sha256.txt`
+
+Publication posting timeline may differ by platform availability.
 
 ## Repository Structure
 
@@ -41,6 +48,15 @@ nrr-ime/
 |-- LICENSE
 |-- requirements.txt
 |-- reproducibility.md
+|-- manuscript/
+|   `-- current/
+|       |-- paper4-nrr-ime-v64.tex
+|       |-- paper4-nrr-ime-v64.pdf
+|       |-- fig1_design_space.png
+|       |-- fig2_bangbang.png
+|       |-- fig3_comparative.png
+|       |-- fig4_stability.png
+|       `-- checksums_sha256.txt
 |-- experiments/
 |   |-- phase_comparison.py
 |   `-- scaling_validation.py
@@ -57,7 +73,7 @@ python3 experiments/scaling_validation.py
 
 ## Reproducibility
 
-See `reproducibility.md` for fixed settings and output-availability policy.
+See `reproducibility.md` for fixed settings and artifact mapping.
 
 ## Related Repositories
 
