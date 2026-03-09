@@ -58,6 +58,7 @@ nrr-ime/
 |       |-- fig4_stability.png
 |       `-- checksums_sha256.txt
 |-- experiments/
+|   |-- experimental_data.json
 |   |-- phase_comparison.py
 |   `-- scaling_validation.py
 `-- .gitignore
@@ -70,6 +71,11 @@ pip install -r requirements.txt
 python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
+
+The bundled `experiments/experimental_data.json` is a machine-readable export of the
+published v67 summary tables. It supports the included comparison scripts and lets
+readers inspect the manuscript values directly in git. Full raw run logs are not
+bundled in this snapshot.
 
 ## Reproducibility
 

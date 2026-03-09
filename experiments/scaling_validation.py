@@ -15,6 +15,26 @@ def load_experimental_data():
         return json.load(f)
 
 
+def select_summary(data, phase, scenario, model='claude'):
+    matches = [
+        summary for summary in data.get('summaries', [])
+        if summary.get('phase') == phase
+        and summary.get('scenario') == scenario
+        and summary.get('model') == model
+    ]
+    if not matches:
+        raise ValueError(f'No summary for phase={phase}, scenario={scenario}, model={model}')
+    if len(matches) != 1:
+        raise ValueError(f'Ambiguous summary for phase={phase}, scenario={scenario}, model={model}')
+    summary = matches[0]
+    return {
+        'total_tokens_mean': float(summary['total_tokens_mean']),
+        'avg_per_turn_mean': float(summary['avg_per_turn_mean']),
+        'turns': int(summary['turns']),
+        'n_trials': int(summary.get('n_trials', 1)),
+    }
+
+
 def select_runs(data, phase, scenario, model='claude'):
     runs = [
         exp for exp in data.get('experiments', [])
@@ -45,8 +65,11 @@ def validate_scaling():
     scenarios = ['bank', 'spring', 'court']
     results = []
     for sc in scenarios:
-        runs = select_runs(data, phase='1.5', scenario=sc, model='claude')
-        s = summarize_runs(runs)
+        if data.get('summaries'):
+            s = select_summary(data, phase='1.5', scenario=sc, model='claude')
+        else:
+            runs = select_runs(data, phase='1.5', scenario=sc, model='claude')
+            s = summarize_runs(runs)
         results.append((sc.capitalize(), s))
 
     print('=' * 60)

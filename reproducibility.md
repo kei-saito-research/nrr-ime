@@ -23,6 +23,11 @@ python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
 
+## Bundled experiment data
+- `experiments/experimental_data.json` contains the published v67 summary values in machine-readable form.
+- The included scripts reproduce repository comparison outputs from those published summaries.
+- This snapshot does not bundle full raw provider transcripts or per-turn run logs.
+
 ## Manuscript package
 - Main TeX: `manuscript/current/paper4-nrr-ime-v67.tex`
 - PDF snapshot: `manuscript/current/paper4-nrr-ime-v67.pdf`
@@ -34,5 +39,5 @@ python3 experiments/scaling_validation.py
 - Full raw run logs may be hosted separately from this repository.
 
 ## Known limitations
-- Scripts in this snapshot do not include bundled full result logs.
+- Scripts in this snapshot run against the bundled published summary data, not full raw run logs.
 - Provider-side model updates may affect rerun values.
