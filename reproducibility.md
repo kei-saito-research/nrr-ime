@@ -24,8 +24,8 @@ python3 experiments/scaling_validation.py
 ```
 
 ## Manuscript package
-- Main TeX: `manuscript/current/paper4-nrr-ime-v64.tex`
-- PDF snapshot: `manuscript/current/paper4-nrr-ime-v64.pdf`
+- Main TeX: `manuscript/current/paper4-nrr-ime-v67.tex`
+- PDF snapshot: `manuscript/current/paper4-nrr-ime-v67.pdf`
 - Figures: `manuscript/current/fig1_design_space.png` to `fig4_stability.png`
 - Checksums: `manuscript/current/checksums_sha256.txt`
 

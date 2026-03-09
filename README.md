@@ -1,9 +1,9 @@
-# NRR-IME: Structure-Aware Optimization for Stateful Reasoning on Stateless LLM APIs
+# NRR-IME: Interface Decomposition for Stable State Transitions on Stateless LLM APIs
 
-NRR-IME provides an implementation package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository includes the current manuscript snapshot and reproducibility assets for operational benchmarking of structure-aware updates, with explicit protocol constraints and condition-bounded claims.
+NRR-IME provides an interface-structure package for **ambiguity-preserving inference** under stateless LLM API constraints. The engineering objective is to reduce **premature commitment in LLM decoding** and limit downstream rework caused by **semantic collapse**. The control policy is **defer vs commit** under explicit conditions: maintain compatible alternatives while evidence is weak, then commit when action boundaries are clear. This repository includes the current manuscript snapshot and reproducibility assets for benchmarking which interface decomposition yields stable state transitions, with explicit protocol constraints and condition-bounded claims.
 
 **Quick links**
-- Manuscript snapshot: `manuscript/current/paper4-nrr-ime-v64.tex` / `paper4-nrr-ime-v64.pdf`
+- Manuscript snapshot: `manuscript/current/paper4-nrr-ime-v67.tex` / `paper4-nrr-ime-v67.pdf`
 - [Positioning (NRR vs related approaches)](./docs/positioning.md)
 - [Search Keywords and Weekly Rank Log](./docs/keywords.md)
 
@@ -30,8 +30,8 @@ Series numbering policy: `paper3` is permanently skipped and never reused.
 ## Manuscript Artifacts
 
 Current manuscript snapshot:
-- `manuscript/current/paper4-nrr-ime-v64.tex`
-- `manuscript/current/paper4-nrr-ime-v64.pdf`
+- `manuscript/current/paper4-nrr-ime-v67.tex`
+- `manuscript/current/paper4-nrr-ime-v67.pdf`
 - `manuscript/current/fig1_design_space.png`
 - `manuscript/current/fig2_bangbang.png`
 - `manuscript/current/fig3_comparative.png`
@@ -50,8 +50,8 @@ nrr-ime/
 |-- reproducibility.md
 |-- manuscript/
 |   `-- current/
-|       |-- paper4-nrr-ime-v64.tex
-|       |-- paper4-nrr-ime-v64.pdf
+|       |-- paper4-nrr-ime-v67.tex
+|       |-- paper4-nrr-ime-v67.pdf
 |       |-- fig1_design_space.png
 |       |-- fig2_bangbang.png
 |       |-- fig3_comparative.png
