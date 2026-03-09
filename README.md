@@ -59,6 +59,7 @@ nrr-ime/
 |       `-- checksums_sha256.txt
 |-- experiments/
 |   |-- experimental_data.json
+|   |-- generate_figures.py
 |   |-- paper4_crossmodel_v5.ipynb
 |   |-- phase_comparison.py
 |   `-- scaling_validation.py
@@ -69,6 +70,7 @@ nrr-ime/
 
 ```bash
 pip install -r requirements.txt
+python3 experiments/generate_figures.py
 python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
@@ -77,6 +79,9 @@ The bundled `experiments/experimental_data.json` is the merged Paper 4 experimen
 dataset used for the current manuscript line. It includes the 135 run-level records
 used by the repository comparison scripts. Full provider-side infrastructure logs are
 not bundled in this snapshot.
+
+`experiments/generate_figures.py` regenerates the four manuscript figure PNGs from
+the bundled merged dataset and writes them to `manuscript/current/` by default.
 
 The main experiment implementation used for this dataset is bundled as
 `experiments/paper4_crossmodel_v5.ipynb`.
