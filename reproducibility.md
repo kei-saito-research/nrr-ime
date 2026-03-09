@@ -29,6 +29,15 @@ python3 experiments/scaling_validation.py
 - The included scripts reproduce repository comparison outputs from those 135 run-level records.
 - This snapshot does not bundle provider-side infrastructure logs outside the merged dataset.
 
+## Field name mapping
+
+| Manuscript term | JSON field | JSON level |
+|---|---|---|
+| semantic collapse rate | `single_rate` | experiment |
+| weight volatility | `weight_volatility` | experiment |
+| operator / target | `operator`, `target` | turn |
+| returned single | `returned_single` | turn (Phase 2.0) |
+
 ## Manuscript package
 - Main TeX: `manuscript/current/paper4-nrr-ime-v67.tex`
 - PDF snapshot: `manuscript/current/paper4-nrr-ime-v67.pdf`
