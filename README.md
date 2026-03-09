@@ -72,10 +72,10 @@ python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
 
-The bundled `experiments/experimental_data.json` is a machine-readable export of the
-published v67 summary tables. It supports the included comparison scripts and lets
-readers inspect the manuscript values directly in git. Full raw run logs are not
-bundled in this snapshot.
+The bundled `experiments/experimental_data.json` is the merged Paper 4 experiment
+dataset used for the current manuscript line. It includes the 135 run-level records
+used by the repository comparison scripts. Full provider-side infrastructure logs are
+not bundled in this snapshot.
 
 ## Reproducibility
 

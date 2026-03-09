@@ -14,31 +14,6 @@ def load_experimental_data():
     with open(data_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-
-def select_summary(data, phase, scenario, model='claude', mode=None):
-    matches = []
-    for summary in data.get('summaries', []):
-        if summary.get('phase') != phase:
-            continue
-        if summary.get('scenario') != scenario:
-            continue
-        if summary.get('model') != model:
-            continue
-        if mode is not None and summary.get('mode') != mode:
-            continue
-        matches.append(summary)
-    if not matches:
-        raise ValueError(f'No summary for phase={phase}, scenario={scenario}, model={model}, mode={mode}')
-    if len(matches) != 1:
-        raise ValueError(f'Ambiguous summary for phase={phase}, scenario={scenario}, model={model}, mode={mode}')
-    summary = matches[0]
-    return {
-        'total_tokens_mean': float(summary['total_tokens_mean']),
-        'avg_per_turn_mean': float(summary['avg_per_turn_mean']),
-        'n_trials': int(summary.get('n_trials', 1)),
-    }
-
-
 def select_runs(data, phase, scenario, model='claude', mode=None):
     runs = []
     for exp in data.get('experiments', []):
@@ -69,14 +44,9 @@ def summarize_runs(runs):
 def compare_phases():
     data = load_experimental_data()
 
-    if data.get('summaries'):
-        phase_10 = select_summary(data, phase='1.0', scenario='bank', model='claude')
-        phase_15 = select_summary(data, phase='1.5', scenario='bank', model='claude')
-        phase_30 = select_summary(data, phase='3.0', scenario='bank', model='claude', mode='explicit')
-    else:
-        phase_10 = summarize_runs(select_runs(data, phase='1.0', scenario='bank', model='claude'))
-        phase_15 = summarize_runs(select_runs(data, phase='1.5', scenario='bank', model='claude'))
-        phase_30 = summarize_runs(select_runs(data, phase='3.0', scenario='bank', model='claude', mode='explicit'))
+    phase_10 = summarize_runs(select_runs(data, phase='1.0', scenario='bank', model='claude'))
+    phase_15 = summarize_runs(select_runs(data, phase='1.5', scenario='bank', model='claude'))
+    phase_30 = summarize_runs(select_runs(data, phase='3.0', scenario='bank', model='claude', mode='explicit'))
 
     tokens_10 = phase_10['total_tokens_mean']
     tokens_15 = phase_15['total_tokens_mean']
