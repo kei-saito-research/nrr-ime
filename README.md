@@ -59,6 +59,7 @@ nrr-ime/
 |       `-- checksums_sha256.txt
 |-- experiments/
 |   |-- experimental_data.json
+|   |-- paper4_crossmodel_v5.ipynb
 |   |-- phase_comparison.py
 |   `-- scaling_validation.py
 `-- .gitignore
@@ -76,6 +77,9 @@ The bundled `experiments/experimental_data.json` is the merged Paper 4 experimen
 dataset used for the current manuscript line. It includes the 135 run-level records
 used by the repository comparison scripts. Full provider-side infrastructure logs are
 not bundled in this snapshot.
+
+The main experiment implementation used for this dataset is bundled as
+`experiments/paper4_crossmodel_v5.ipynb`.
 
 ## Reproducibility
 

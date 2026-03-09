@@ -25,6 +25,7 @@ python3 experiments/scaling_validation.py
 
 ## Bundled experiment data
 - `experiments/experimental_data.json` contains the merged Paper 4 experiment dataset for the current manuscript line.
+- `experiments/paper4_crossmodel_v5.ipynb` contains the main experiment runner used to generate that dataset.
 - The included scripts reproduce repository comparison outputs from those 135 run-level records.
 - This snapshot does not bundle provider-side infrastructure logs outside the merged dataset.
 
