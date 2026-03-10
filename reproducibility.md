@@ -19,7 +19,7 @@ Primary manuscript artifacts are in `manuscript/current/`.
 ## Run commands
 ```bash
 pip install -r requirements.txt
-python3 experiments/generate_figures.py
+bash scripts/generate_manuscript_figures.sh
 python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
@@ -46,16 +46,23 @@ python3 experiments/scaling_validation.py
 - Figures: `manuscript/current/fig1_design_space.png` to `fig4_stability.png`
 - Checksums: `manuscript/current/checksums_sha256.txt`
 
+Stable review-package commands:
+- Figure sync: `bash scripts/generate_manuscript_figures.sh`
+- Build current manuscript to temp output: `bash scripts/build_current_manuscript.sh`
+- Verify current package checksums: `bash scripts/verify_current_package.sh`
+
 ## Artifact map
 | Artifact | Command | Output |
 |---|---|---|
-| Figure 1-4 regeneration | `python3 experiments/generate_figures.py` | `manuscript/current/fig1_design_space.png` to `fig4_stability.png` |
+| Figure 1-4 regeneration | `bash scripts/generate_manuscript_figures.sh` | `/tmp/nrr-ime_current_figures/fig1_design_space.png` to `fig4_stability.png` |
 | Phase comparison summary | `python3 experiments/phase_comparison.py` | stdout summary from `experiments/experimental_data.json` |
 | Scaling validation summary | `python3 experiments/scaling_validation.py` | stdout summary from `experiments/experimental_data.json` |
+| Current manuscript build | `bash scripts/build_current_manuscript.sh` | `/tmp/nrr-ime_current_build/paper4-nrr-ime-v67.pdf` |
+| Current package checksum verification | `bash scripts/verify_current_package.sh` | stdout verification for `manuscript/current/checksums_sha256.txt` |
 
 ## Output policy
 - The current manuscript package bundles a fixed snapshot of Figure 1-4 under `manuscript/current/`.
-- Local figure reruns may produce PNG files that are visually aligned but not bit-for-bit identical to the bundled snapshot.
+- Local figure reruns may produce PNG files that are visually aligned but not bit-for-bit identical to the bundled snapshot, so the stable wrapper writes reruns to `/tmp/nrr-ime_current_figures` by default.
 - Generated outputs from local execution beyond the bundled figure snapshot are not included in this repository snapshot.
 - Full raw run logs may be hosted separately from this repository.
 

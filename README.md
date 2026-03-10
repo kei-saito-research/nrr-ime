@@ -70,7 +70,7 @@ nrr-ime/
 
 ```bash
 pip install -r requirements.txt
-python3 experiments/generate_figures.py
+bash scripts/generate_manuscript_figures.sh
 python3 experiments/phase_comparison.py
 python3 experiments/scaling_validation.py
 ```
@@ -81,7 +81,8 @@ used by the repository comparison scripts. Full provider-side infrastructure log
 not bundled in this snapshot.
 
 `experiments/generate_figures.py` regenerates the four manuscript figure PNGs from
-the bundled merged dataset and writes them to `manuscript/current/` by default.
+the bundled merged dataset. The stable wrapper writes to a temp output directory by
+default so the tracked review package remains unchanged.
 
 The main experiment implementation used for this dataset is bundled as
 `experiments/paper4_crossmodel_v5.ipynb`.
@@ -89,6 +90,11 @@ The main experiment implementation used for this dataset is bundled as
 ## Reproducibility
 
 See `reproducibility.md` for fixed settings and artifact mapping.
+
+Stable review-package entrypoints:
+- `bash scripts/generate_manuscript_figures.sh`
+- `bash scripts/build_current_manuscript.sh`
+- `bash scripts/verify_current_package.sh`
 
 ## Related Repositories
 
