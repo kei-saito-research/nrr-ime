@@ -1,6 +1,6 @@
-# Search Keywords for Ambiguity-Preserving Inference (Weekly Tracking)
+# Search Keywords for Ambiguity-Preserving Inference
 
-This page tracks search visibility for NRR-related queries. Use weekly snapshots to monitor ranking changes and refine README/docs wording without changing manuscript claims.
+This page lists English and Japanese query terms that describe the IME problem setting and related NRR terminology.
 
 ## English Queries (20)
 
@@ -33,18 +33,7 @@ This page tracks search visibility for NRR-related queries. Use weekly snapshots
 4. RAG 検索 失敗 埋め込み 密集
 5. 生成AI 保留 defer commit
 
-## Weekly Rank Log Template
-
-| Date | Query | Rank | URL | Notes |
-| --- | --- | --- | --- | --- |
-| YYYY-MM-DD | preserve ambiguity in large language models |  |  |  |
-| YYYY-MM-DD | premature commitment in LLM decoding |  |  |  |
-| YYYY-MM-DD | semantic collapse in embedding space |  |  |  |
-| YYYY-MM-DD | defer vs commit strategy in language model reasoning |  |  |  |
-| YYYY-MM-DD | 曖昧性保持推論 |  |  |  |
-
 ## Navigation
 
 - [README](../README.md)
 - [NRR Positioning](./positioning.md)
-- arXiv: pending (under moderation; no public URL yet)

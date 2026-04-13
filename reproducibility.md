@@ -5,33 +5,32 @@
 This repository snapshot provides experiment scripts plus the current manuscript package.
 Primary manuscript artifacts are in `manuscript/current/`.
 
-## Stable review-package commands
+## Snapshot reproduction commands
 
 - Figure rerun to temp output:
   - `bash scripts/generate_manuscript_figures.sh`
   - output: `/tmp/nrr-ime_current_figures/fig1_design_space.png` to `fig4_stability.png`
 - Build the current manuscript to temp output:
   - `bash scripts/build_current_manuscript.sh`
-  - output: `/tmp/nrr-ime_current_build/paper4-nrr-ime-v67.pdf`
-- Verify the current review-package checksum manifest:
+  - output: `/tmp/nrr-ime_current_build/paper4-nrr-ime-v69.pdf`
+- Verify the current snapshot checksum manifest:
   - `bash scripts/verify_current_package.sh`
 
-## Current review package
+## Current snapshot artifacts
 
-- Main TeX: `manuscript/current/paper4-nrr-ime-v67.tex`
-- Current PDF snapshot: `manuscript/current/paper4-nrr-ime-v67.pdf`
+- Main TeX: `manuscript/current/paper4-nrr-ime-v69.tex`
+- Current PDF snapshot: `manuscript/current/paper4-nrr-ime-v69.pdf`
 - Current manuscript figures: `manuscript/current/fig1_design_space.png` to `fig4_stability.png`
 - Checksum manifest: `manuscript/current/checksums_sha256.txt`
 
 ## Checksum policy
 
 - `manuscript/current/checksums_sha256.txt` covers the tracked files that define the
-  current review package for the latest manuscript line in `manuscript/current/`.
+  current snapshot for the latest manuscript line in `manuscript/current/`.
 - Coverage includes the current main `.tex` file, the committed current `.pdf`, and
   each figure asset consumed by that current manuscript from `manuscript/current/`.
-- Coverage excludes `checksums_sha256.txt` itself, older manuscript versions that may
-  remain in `manuscript/current/` for local working continuity, and repo-specific
-  artifacts outside `manuscript/current/` unless a separate manifest is provided.
+- Coverage excludes `checksums_sha256.txt` itself and repo-specific artifacts
+  outside `manuscript/current/` unless a separate manifest is provided.
 
 ## Environment
 - Python: 3.10+
@@ -80,8 +79,8 @@ python3 experiments/scaling_validation.py
 | Figure 1-4 regeneration | `bash scripts/generate_manuscript_figures.sh` | `/tmp/nrr-ime_current_figures/fig1_design_space.png` to `fig4_stability.png` |
 | Phase comparison summary | `python3 experiments/phase_comparison.py` | stdout summary from `experiments/experimental_data.json` |
 | Scaling validation summary | `python3 experiments/scaling_validation.py` | stdout summary from `experiments/experimental_data.json` |
-| Current manuscript build | `bash scripts/build_current_manuscript.sh` | `/tmp/nrr-ime_current_build/paper4-nrr-ime-v67.pdf` |
-| Current package checksum verification | `bash scripts/verify_current_package.sh` | stdout verification for `manuscript/current/checksums_sha256.txt` |
+| Current manuscript build | `bash scripts/build_current_manuscript.sh` | `/tmp/nrr-ime_current_build/paper4-nrr-ime-v69.pdf` |
+| Current snapshot checksum verification | `bash scripts/verify_current_package.sh` | stdout verification for `manuscript/current/checksums_sha256.txt` |
 
 ## Output policy
 - The current manuscript package bundles a fixed snapshot of Figure 1-4 under `manuscript/current/`.

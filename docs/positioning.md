@@ -20,5 +20,4 @@ NRR targets **ambiguity-preserving inference** for practical LLM systems. The ma
 ## Navigation
 
 - [README](../README.md)
-- [Search Keywords and Weekly Rank Log](./keywords.md)
-- arXiv: pending (under moderation; no public URL yet)
+- [Search keywords](./keywords.md)
